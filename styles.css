@@ -1,0 +1,164 @@
+.icon {
+    width: 30px;
+}
+
+/*
+gooogle font stuff 
+font-family: 'Poppins', sans-serif;
+*/
+
+:root {
+    --ff-sans: 'Poppins', sans-serif;
+    --fw-light: 200;
+    --fw-normal: 400;
+    --fw-bold: 800;
+
+    --fs-400: 0.9375rem;
+    --fs-500: 1.25rem;
+    --fs-600: 1.625rem;
+    --fs-900: 2.8rem;
+    --fs-700: 20.8rem;
+
+    --clr-neutral-900: hsl(234, 12%, 34%);
+    --clr-neutral-400: hsl(229, 6%, 66%);
+    --clr-neutral-100: hsl(0, 0%, 98%);
+
+    --clr-teal: hsl(179, 46%, 47%);
+    --clr-red: hsl(0, 70%, 60%);
+    --clr-blue: hsl(212, 75%,62%);
+    --clr-yellow:hsl(34, 89%,65%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: var(--ff-sans);
+    font-weight: var(--fw-normal);
+    line-height: 1.7;
+    color: var(--clr-neutral-400);
+}
+
+
+body {
+    margin: 0;
+    padding-block-end: 5rem;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--clr-neutral-900);
+    line-height: 1.2;
+}
+
+.wrapper {
+    max-width: 1900px;
+    margin-inline: auto;
+}
+/*
+inherits margin inline from original wrapper 
+since both have same class 
+but extra narrow class overides the max width 
+36:15
+*/
+.wrapper--narrow {
+    max-width: 720px;
+}
+
+header {
+    text-align: center;
+    margin-block: 6rem;
+}
+
+header > p {
+    font-size: 3rem;
+}
+
+h1 {
+    font-weight: var(--fw-light);
+    font-size: var(--fs-900);
+}
+
+h1 span {
+    font-weight: var(--fw-bold);
+}
+/*
+mak
+*/
+.layout-flex {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    flex-wrap: wrap; /* Allow items to wrap */
+    --gap: 2rem;
+    gap: var(--gap);
+    align-items: center;
+}
+
+
+.layout-flex > * {
+    flex: 1;
+}
+
+@media (min-width: 800px) {
+    .layout-flex {
+        flex-direction: row; /* Align items side by side */
+        flex-wrap: nowrap; /* Prevent wrapping */
+    }
+
+    .layout-flex > * {
+        flex: 0 0 calc(33.333% - var(--gap)); /* Adjust width for three columns */
+    }
+    .card {
+        padding: 3rem;
+        width: 100%;
+    }
+}
+
+.colum {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: var(--gap);
+}
+
+.card {
+    --br: 0.325rem;
+    border-top: var(--br) solid;
+    padding: 2rem;
+    border-radius: var(--br);
+    box-shadow: 0 1rem 1.5rem -0.5rem rgb(0 50 100 / 0.15);
+    
+}
+
+.card_title {
+    font-size: var(--fs-600);
+}
+
+.card_img {
+    display: block;
+    width: 20%; /* or any specific size */
+    height: auto; /* maintains aspect ratio */
+    margin-left: auto;
+    margin-top: 1rem;
+}
+
+.border-teal {
+    border-color: var(--clr-teal);
+}
+
+.border-red {
+    border-color: var(--clr-red);
+}
+
+.border-yellow {
+    border-color: var(--clr-yellow);
+}
+
+.border-blue {
+    border-color: var(--clr-blue);
+}
+
